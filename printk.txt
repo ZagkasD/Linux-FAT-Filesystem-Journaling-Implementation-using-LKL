@@ -1,0 +1,9 @@
+fs/fat/inode fat_read_root() line: 1377
+    printk(KERN_INFO "Value of s_count from superblock (into inode) is: %d\n",inode->i_sb->s_count);
+    printk(KERN_INFO "Char from superblock (into inode) is: %s\n",inode->i_sb->s_id);
+    printk(KERN_INFO "Link (into inode) is: %d\n",inode->i_sb->s_max_links);
+    printk(KERN_INFO "Char subtype from superblock (into inode) is: %s\n",inode->i_sb->s_subtype);
+    printk(KERN_INFO "Char options from superblock (into inode) is: %s\n",inode->i_sb->s_options);		    printk(KERN_INFO "Remove_count (into inode) is: %d\n",inode->i_sb->s_stack_depth);
+
+msdos_dir_entry
+msdos_sb_info

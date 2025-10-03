@@ -1,0 +1,53 @@
+
+tools/lkl/tests/boot.c line: 924
+	fd_journal = open("/home/myy601/journal.txt", O_CREAT | O_RDWR | O_TRUNC, 0);
+
+tools/lkl/include/lkl_host.h line: 11
+	int fd_journal;
+
+tools/lkl/cptofs open_src line: 111
+	char str[50];
+   	 snprintf(str, 50, "%d\n", fd);
+   	 write(fd_journal,"\nopen_src-> ", 10);
+   	 write(fd_journal,str, strlen(str));
+
+open_dst() line: 142
+char str[50];
+    snprintf(str, 50, "%d\n", fd);
+    write(fd_journal,"\nOpen dst:    Path: ", 22);
+    write(fd_journal,path, strlen(path));
+    write(fd_journal,str, strlen(str));
+
+read_src line: 163
+char str[100];
+    snprintf(str, 100, "%d\n", ret);
+    write(fd_journal,"\nRead src: \n", 12);
+    write(fd_journal,str, strlen(str));
+    write(fd_journal,"Buffer:\n", 9);
+    write(fd_journal,buf, strlen(buf));
+    write(fd_journal,"\n--------------------------------------------------------------------", 68);
+    snprintf(str, 100, "\nLen: %d\n", len);
+    write(fd_journal,str, strlen(str));
+
+write_dst line: 187
+char str[100];
+    snprintf(str, 100, "%d\n", ret);
+    write(fd_journal,"\ndst-> ", 6);
+    write(fd_journal,str, strlen(str));
+
+copy_file line: 259
+char str[100];
+    snprintf(str, 100, "%ld\n", len);
+    write(fd_journal,"\ncopy-> ", 7);
+    write(fd_journal,str, strlen(str));
+    write(fd_journal,src, strlen(src));
+    write(fd_journal,"\n", 2);
+    write(fd_journal,dst, strlen(dst));
+    write(fd_journal,"\n", 2);
+
+do_entry line: 461
+char str[50];
+    snprintf(str, 50, "%d\n", ret);
+    write(fd_journal,"\ndoentry-> ", 12);
+    write(fd_journal,str, strlen(str));
+
